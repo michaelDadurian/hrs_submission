@@ -1,0 +1,163 @@
+[ {
+  "id" : 1,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "diastolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 2,
+  "triggeredRules" : [ {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 3,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "diastolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "weight",
+    "subtype" : "weight"
+  } ]
+}, {
+  "id" : 4,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 5,
+  "triggeredRules" : [ {
+    "type" : "weight",
+    "subtype" : "weight"
+  } ]
+}, {
+  "id" : 6,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "systolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 7,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "systolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  }, {
+    "type" : "weight",
+    "subtype" : "weight"
+  } ]
+}, {
+  "id" : 8,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "diastolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 9,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "systolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "diastolic"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 10,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "diastolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 11,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  }, {
+    "type" : "weight",
+    "subtype" : "weight"
+  } ]
+}, {
+  "id" : 12,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "diastolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 13,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "diastolic"
+  }, {
+    "type" : "weight",
+    "subtype" : "weight"
+  } ]
+}, {
+  "id" : 14,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "heartRate"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+}, {
+  "id" : 15,
+  "triggeredRules" : [ {
+    "type" : "bloodPressure",
+    "subtype" : "systolic"
+  }, {
+    "type" : "bloodPressure",
+    "subtype" : "diastolic"
+  }, {
+    "type" : "glucose",
+    "subtype" : "bloodSugarLevel"
+  } ]
+} ]
