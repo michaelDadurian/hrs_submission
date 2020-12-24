@@ -150,13 +150,6 @@ predicate_type_map = {
     'composition': Composition
 }
     
-def is_valid_file(f):
-    if not os.path.exists(f):
-        return False
-    
-    return True
-
-
 def make_predicate(predicate, index, element):
     pred_obj = predicate_type_map[predicate['type']](predicate, index, element)
     return pred_obj
@@ -189,11 +182,11 @@ def main(args):
     config_file = args.Config
     input_file = args.Input
 
-    if not is_valid_file(config_file):
+    if not os.path.exists(config_file):
         log.error('Config file not found')
         sys.exit(1)
     
-    if not is_valid_file(input_file):
+    if not os.path.exists(input_file):
         log.error('Input file not found')
         sys.exit(1)
 
@@ -211,7 +204,7 @@ def main(args):
     process_signals(config_data, values)
 
 
-if __name__ == '__main__':
+def parse_args():
     import argparse
     
     parser = argparse.ArgumentParser(description='Signal sounder')
@@ -225,6 +218,9 @@ if __name__ == '__main__':
                         type=str,
                         help='the path to the input file')
 
-    args = parser.parse_args()
+    return parser.parse_args()
 
+
+if __name__ == '__main__':
+    args = parse_args()
     main(args)
