@@ -11,8 +11,6 @@ import java.util.Map.Entry;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.hrs.model.BloodPressureReading;
-import com.hrs.model.GlucoseReading;
 import com.hrs.model.JsonReadingsParser;
 import com.hrs.model.JsonRulesParser;
 import com.hrs.model.PatientData;
@@ -21,7 +19,6 @@ import com.hrs.model.Rule;
 import com.hrs.model.Subtype;
 import com.hrs.model.TriggeredRule;
 import com.hrs.model.TriggeredRuleSet;
-import com.hrs.model.WeightReading;
 import com.hrs.model.YamlReadingsParser;
 
 import org.apache.commons.io.FilenameUtils;
