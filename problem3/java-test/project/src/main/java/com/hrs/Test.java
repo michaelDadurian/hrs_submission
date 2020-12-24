@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.hrs.model.BloodPressureReading;
@@ -70,7 +69,7 @@ public class Test {
     public Test(String rulesFile, String readingsFile) {
         // Read resource source file for rules
         List<Rule> rules = new ArrayList<>();
-        HashMap<Integer, PatientData> patientData = new HashMap<>();
+        Map<Integer, PatientData> patientData = new HashMap<>();
 
         JsonRulesParser jsonRulesParser = new JsonRulesParser(rulesFile);
         try {
@@ -131,7 +130,7 @@ public class Test {
      * @param rules
      * @return
      */
-    public List<TriggeredRuleSet> findTriggers(HashMap<Integer, PatientData> patientData, List<Rule> rules) {
+    public List<TriggeredRuleSet> findTriggers(Map<Integer, PatientData> patientData, List<Rule> rules) {
         List<TriggeredRuleSet> triggeredRuleSets = new ArrayList<>();
     
         // For every patient, find each rule that triggered
@@ -142,19 +141,10 @@ public class Test {
 
             // Collect each patient's id and their readings
             int patientId = patientEntry.getKey();
-
             PatientReadings patientReadings = patientEntry.getValue().getReadings();
-            BloodPressureReading bpReading = patientReadings.getBpReading();
-            GlucoseReading glucoseReading = patientReadings.getGlucoseReading();
-            WeightReading weightReading = patientReadings.getWeightReading();
 
             // Store each reading value to match with rule subtypes
-            Map<String, Integer> readingsValues = new HashMap<>();
-            readingsValues.put("diastolic", bpReading.getDiastolic());
-            readingsValues.put("systolic", bpReading.getSystolic());
-            readingsValues.put("heartRate", bpReading.getHeartRate());
-            readingsValues.put("bloodSugarLevel", glucoseReading.getBloodSugarLevel());
-            readingsValues.put("weight", weightReading.getWeight());
+            Map<String, Integer> readingsValues = getPatientReadingValues(patientReadings);
 
             for (Rule rule: rules) {
                 // Collect each triggered rule and subtype
@@ -174,10 +164,27 @@ public class Test {
             //Store each triggered rule set for each patient
             triggeredRuleSet.setId(patientId);
             triggeredRuleSet.setTriggeredRules(triggeredRules);
-
             triggeredRuleSets.add(triggeredRuleSet);
         }
 
         return triggeredRuleSets;
     }
+
+    
+    /**
+     * Get a map of patient reading values
+     * @param patientReadings
+     * @return
+     */
+    public Map<String, Integer> getPatientReadingValues(PatientReadings patientReadings) {
+        Map<String, Integer> readingsValues = new HashMap<>();
+        readingsValues.put("diastolic", patientReadings.getBpReading().getDiastolic());
+        readingsValues.put("systolic", patientReadings.getBpReading().getSystolic());
+        readingsValues.put("heartRate", patientReadings.getBpReading().getHeartRate());
+        readingsValues.put("bloodSugarLevel", patientReadings.getGlucoseReading().getBloodSugarLevel());
+        readingsValues.put("weight", patientReadings.getWeightReading().getWeight());
+
+        return readingsValues;
+    }
+    
 }
